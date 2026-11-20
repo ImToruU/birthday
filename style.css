@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Vazirmatn:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff0f5;
+    color: #754c59;
+    overflow-x: hidden;
+}
+
+/* صفحه تولد */
+
+#birthday-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 30px 20px;
+}
+
+.birthday-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(20px, 5vw, 38px);
+    color: #d889a5;
+    text-align: center;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* کیک و شعله‌ها */
+
+.cake-container {
+    position: relative;
+    width: min(80vw, 380px);
+}
+
+.cake {
+    width: 100%;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.flame {
+    position: absolute;
+    width: 12%;
+    image-rendering: pixelated;
+    animation: flicker 0.7s infinite alternate;
+}
+
+
+.flame-one {
+    bottom: 100%;
+    left: 43%;
+}
+
+
+.flame-two {
+    top: 0%;
+    left: 16%;
+}
+
+
+.flame-three {
+    bottom: 89%;
+    left: 72%;
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(1) rotate(-3deg);
+    }
+
+    to {
+        transform: scale(1.1) rotate(3deg);
+    }
+}
+
+/* دکمه */
+
+#blow-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 18px 22px;
+    border: 2px solid #e5a9bd;
+    border-radius: 8px;
+    background-color: #f9dce7;
+    color: #754c59;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#blow-button:hover {
+    background-color: #eebdce;
+    transform: translateY(-3px);
+}
+
+/* نامه */
+
+.hidden {
+    display: none !important;
+}
+
+#letter-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.letter {
+    width: min(90vw, 600px);
+    min-height: 400px;
+    background-color: #fffaf0;
+    border: 2px solid #eadcc8;
+    border-radius: 14px;
+    padding: 40px 30px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 1s ease;
+}
+
+.letter.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.letter h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    line-height: 2;
+    text-align: center;
+    color: #d889a5;
+    margin-bottom: 35px;
+}
+
+#birthday-message {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 17px;
+    line-height: 2.2;
+    color: #725c55;
+}
+
+#signature {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    text-align: left;
+    margin-top: 35px;
+    font-size: 16px;
+    color: #b57b91;
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+    #birthday-screen {
+        gap: 25px;
+    }
+
+    .birthday-title {
+    margin-bottom: 0;
+    position: relative;
+    top: -70px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter h2 {
+        font-size: 12px;
+    }
+
+    #birthday-message {
+        font-size: 15px;
+    }
+
+    #blow-button {
+        font-size: 10px;
+    }
+}
+
